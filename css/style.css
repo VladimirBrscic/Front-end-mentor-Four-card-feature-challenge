@@ -1,0 +1,155 @@
+:root{
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --heading-dark: hsl(234, 12%, 34%);
+  --heading-blue: hsl(229, 6%, 66%);
+  --p-gray: hsl(0, 0%, 98%);
+  --main-spacer: 2rem;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  max-width: 24rem;
+}
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex: 1 1 17rem;
+}
+h1{
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--heading-dark);
+  opacity: 0.7;
+  margin-bottom: 1rem;
+}
+h1 span{
+  color: #000;
+  font-weight: 700;
+  width: 100%;
+  display: inline-block;
+}
+.intro-words{
+  color: var(--heading-blue);
+}
+.jobs-list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 63rem;
+  list-style: none;
+}
+.job-group{
+  height: 14rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background-repeat: no-repeat;
+  background-position: bottom 1.8rem right 1.8rem;
+  box-shadow: 0px 12px 21px -7px var(--heading-blue);}
+.job-role{
+  text-transform: capitalize;
+  color: #000;
+  font-weight: 700;
+  opacity: 0.8;
+}
+.job-description{
+  color: var(--heading-blue);
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+.supervisor{
+  border-top: 0.25rem solid var(--cyan);
+  background-image: url('../images/icon-supervisor.svg');
+}
+.team-builder{
+  border-top: 0.25rem solid var(--red);
+  background-image: url('../images/icon-team-builder.svg');
+}
+.karma{
+  border-top: 0.25rem solid var(--orange);
+  background-image: url('../images/icon-karma.svg');
+}
+.calculator{
+  border-top: 0.25rem solid var(--blue);
+  background-image: url('../images/icon-calculator.svg');
+}
+footer{
+  position: relative;
+  top:3rem;
+}
+
+@media screen and (min-width: 1000px) {
+  body{
+    padding: 0;
+  }
+  main{
+    align-items: center;
+  }
+  header{
+    width: 29rem;
+    flex: 1 1 12rem;
+  }
+  h1{
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+  .jobs-list{
+    display: grid;
+    grid-template:
+      ' . team-builder .'
+      'supervisor team-builder calculator'
+      'supervisor karma calculator'
+      ' . karma .';
+    grid-gap: 1.5rem;
+    list-style: none;
+    min-height: 100%;
+  }
+  .job-group{
+    height: 13rem;
+    width: 20rem;
+  }
+  .job-role{
+    font-size: 1rem;
+  }
+  .supervisor{
+    grid-area: supervisor;
+  }
+  .team-builder{
+    grid-area: team-builder;
+  }
+  .karma{
+    grid-area: karma;
+  }
+  .calculator{
+    grid-area: calculator;
+  }
+  footer{
+    position: relative;
+    top:3rem;
+  }
+}
+.attribution {
+  font-size: 11px; text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
